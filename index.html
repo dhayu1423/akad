@@ -1,0 +1,43 @@
+<!DOCTYPE html>
+<html lang="id">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>Undangan Pernikahan</title>
+  <style>
+    body {
+      font-family: sans-serif;
+      text-align: center;
+      padding: 2rem;
+      background: #fdf6f0;
+    }
+    h1 {
+      color: #d16c6c;
+    }
+    .card {
+      background: white;
+      padding: 2rem;
+      border-radius: 20px;
+      box-shadow: 0 0 10px rgba(0,0,0,0.1);
+      max-width: 500px;
+      margin: auto;
+    }
+  </style>
+</head>
+<body>
+  <div class="card">
+    <h1>Undangan Pernikahan</h1>
+    <p>Halo <strong id="namaTamu">Tamu</strong> dari <strong id="kotaTamu">Kota</strong>,</p>
+    <p>Dengan senang hati kami mengundang Anda ke acara pernikahan kami.</p>
+    <p><strong>Sabtu, 20 Juli 2025</strong> <br> di Gedung Seruni</p>
+  </div>
+
+  <script>
+    const params = new URLSearchParams(window.location.search);
+    const nama = params.get('nama') || "Tamu";
+    const kota = params.get('kota') || "Kota";
+    document.getElementById('namaTamu').textContent = decodeURIComponent(nama);
+    document.getElementById('kotaTamu').textContent = decodeURIComponent(kota);
+  </script>
+</body>
+</html>
